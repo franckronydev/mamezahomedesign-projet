@@ -1,3 +1,27 @@
+/**
+ * =============================================================================
+ * Mameza Home Design
+ * =============================================================================
+ *
+ * Page d'accueil du site Mameza Home Staging.
+ *
+ * Auteur      : Franck Rony T.
+ * Contact     : +33 7 80 89 23 99
+ * GitHub      : https://github.com/franckronydev
+ * Projet      : https://github.com/franckronydev/mamezahomedesign-projet
+ *
+ * Rôle
+ * ----
+ * Cette page assemble les différentes sections de la page d'accueil ainsi que
+ * les composants de navigation, de présentation des services et de pied de
+ * page.
+ *
+ * Les composants métiers et les styles sont  externalisés afin
+ * de conserver une structurre claire et facilement maintenable...
+ *
+ * =============================================================================
+ */
+
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import HomeSlideshow from "@/components/HomeSlideshow/HomeSlideshow";
@@ -8,13 +32,14 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <div className={styles.homePage}>
+      {/* Navigation principale du site */}
       <Header />
 
       <main>
-        {/* Full-width slideshow directly under the header */}
+        {/* Diaporama principal affiché directement sous l'en-tête */}
         <HomeSlideshow />
 
-        {/* Section 01 — Text left / Image right */}
+        {/* Section 01 — Texte à gauche, image à droite */}
         <TextImageSection
           eyebrow="Professional home staging"
           title="Quality styling that sets your house apart from the competition"
@@ -25,7 +50,7 @@ export default function Home() {
           imageAlt="Professionally staged interior"
         />
 
-        {/* Section 02 — Image left / Text right */}
+        {/* Section 02 — Image à gauche, texte à droite */}
         <ImageTextSection
           eyebrow="Our approach"
           title="Every space deserves to be presented at its best"
@@ -35,7 +60,7 @@ export default function Home() {
           imageAlt="Styled home interior"
         />
 
-        {/* Section 03 — Text left / Image right */}
+        {/* Section 03 — Texte à gauche, image à droite */}
         <TextImageSection
           eyebrow="Designed to impress"
           title="Beautiful spaces create memorable first impressions"
@@ -45,7 +70,7 @@ export default function Home() {
           imageAlt="Elegant staged living room"
         />
 
-        {/* Section 04 — Image left / Text right */}
+        {/* Section 04 — Image à gauche, texte à droite */}
         <ImageTextSection
           eyebrow="Ready to sell"
           title="Let's make your property stand out"
@@ -55,7 +80,7 @@ export default function Home() {
           imageAlt="Beautifully staged property"
         />
 
-        {/* Section 05 — Text left / Image right */}
+        {/* Section 05 — Présentation de Mameza Home Staging */}
         <TextImageSection
           eyebrow="Mameza Home Staging"
           title="Thoughtful design. Strategic presentation."
@@ -65,7 +90,7 @@ export default function Home() {
           imageAlt="Mameza staged interior"
         />
 
-        {/* Section 06 — Image left / Text right */}
+        {/* Section 06 — Mise en avant du portfolio */}
         <ImageTextSection
           eyebrow="Portfolio"
           title="Explore our latest transformations"
@@ -75,7 +100,12 @@ export default function Home() {
           imageAlt="Mameza Home Staging project"
         />
 
-        {/* Trusted by */}
+        {/* -----------------------------------------------------------------
+         * Partenaires et références
+         * -----------------------------------------------------------------
+         * Présentation des logos des professionnels et partenaires associés
+         * à l'activité de Mameza Home Staging.
+         * ----------------------------------------------------------------- */}
         <section className="overflow-hidden bg-[#1F2A24] py-20 text-white">
           <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
             <div className="mb-12 text-center">
@@ -88,6 +118,7 @@ export default function Home() {
               </h2>
             </div>
 
+            {/* Liste des logos affichés dans la section partenaires */}
             <div className="grid grid-cols-2 items-center gap-8 md:grid-cols-5">
               {[
                 "trusted-logo-01.svg",
@@ -112,6 +143,7 @@ export default function Home() {
         </section>
       </main>
 
+      {/* Pied de page commun à l'ensemble du site */}
       <Footer />
     </div>
   );
