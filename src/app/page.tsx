@@ -1,65 +1,118 @@
-import Image from "next/image";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
+import HomeSlideshow from "@/components/HomeSlideshow/HomeSlideshow";
+import TextImageSection from "@/components/HomeSections/TextImageSection";
+import ImageTextSection from "@/components/HomeSections/ImageTextSection";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className={styles.homePage}>
+      <Header />
+
+      <main>
+        {/* Full-width slideshow directly under the header */}
+        <HomeSlideshow />
+
+        {/* Section 01 — Text left / Image right */}
+        <TextImageSection
+          eyebrow="Professional home staging"
+          title="Quality styling that sets your house apart from the competition"
+          description="Thoughtfully styled interiors designed to create a strong first impression and help your property stand out."
+          primaryButton="Schedule Your Staging"
+          secondaryButton="View portfolio"
+          image="/images/home/home-section-01.jpg"
+          imageAlt="Professionally staged interior"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        {/* Section 02 — Image left / Text right */}
+        <ImageTextSection
+          eyebrow="Our approach"
+          title="Every space deserves to be presented at its best"
+          description="We create inviting interiors that help potential buyers connect with a property from the moment they walk through the door."
+          button="Learn more"
+          image="/images/home/home-section-02.jpg"
+          imageAlt="Styled home interior"
+        />
+
+        {/* Section 03 — Text left / Image right */}
+        <TextImageSection
+          eyebrow="Designed to impress"
+          title="Beautiful spaces create memorable first impressions"
+          description="From furniture selection to styling details, every element is carefully considered to create a cohesive and welcoming atmosphere."
+          button="View our work"
+          image="/images/home/home-section-03.jpg"
+          imageAlt="Elegant staged living room"
+        />
+
+        {/* Section 04 — Image left / Text right */}
+        <ImageTextSection
+          eyebrow="Ready to sell"
+          title="Let's make your property stand out"
+          description="Professional staging can transform the way buyers experience your home and create a stronger visual presentation."
+          button="Schedule Your Staging"
+          image="/images/home/home-section-04.jpg"
+          imageAlt="Beautifully staged property"
+        />
+
+        {/* Section 05 — Text left / Image right */}
+        <TextImageSection
+          eyebrow="Mameza Home Staging"
+          title="Thoughtful design. Strategic presentation."
+          description="Our goal is simple: create spaces that feel beautiful, intentional and ready for the next chapter."
+          button="Discover Mameza"
+          image="/images/home/home-section-05.jpg"
+          imageAlt="Mameza staged interior"
+        />
+
+        {/* Section 06 — Image left / Text right */}
+        <ImageTextSection
+          eyebrow="Portfolio"
+          title="Explore our latest transformations"
+          description="Discover a selection of interiors transformed through thoughtful styling, furniture and carefully selected details."
+          button="View portfolio"
+          image="/images/home/home-section-06.jpg"
+          imageAlt="Mameza Home Staging project"
+        />
+
+        {/* Trusted by */}
+        <section className="overflow-hidden bg-[#1F2A24] py-20 text-white">
+          <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
+            <div className="mb-12 text-center">
+              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-[#D4A373]">
+                Trusted by
+              </p>
+
+              <h2 className="font-serif text-3xl md:text-4xl">
+                Trusted by professionals and homeowners
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 items-center gap-8 md:grid-cols-5">
+              {[
+                "trusted-logo-01.svg",
+                "trusted-logo-02.svg",
+                "trusted-logo-03.svg",
+                "trusted-logo-04.svg",
+                "trusted-logo-05.svg",
+              ].map((logo) => (
+                <div
+                  key={logo}
+                  className="flex h-20 items-center justify-center"
+                >
+                  <img
+                    src={`/images/home/${logo}`}
+                    alt="Trusted partner"
+                    className="max-h-12 max-w-[150px] object-contain opacity-80"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
+
+      <Footer />
     </div>
   );
 }
